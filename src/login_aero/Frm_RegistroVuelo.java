@@ -71,6 +71,8 @@ public class Frm_RegistroVuelo extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaVuelos = new javax.swing.JTable();
+        jPanel4 = new javax.swing.JPanel();
+        cdxEstado = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -104,6 +106,12 @@ public class Frm_RegistroVuelo extends javax.swing.JFrame {
         jLabel7.setText("Origen:");
 
         jLabel8.setText("Destino:");
+
+        cbxIdAvion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxIdAvionActionPerformed(evt);
+            }
+        });
 
         cdxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mercancia", "Pasajeros" }));
 
@@ -235,7 +243,7 @@ public class Frm_RegistroVuelo extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -246,6 +254,27 @@ public class Frm_RegistroVuelo extends javax.swing.JFrame {
                 .addGap(45, 45, 45))
         );
 
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Estado del Vuelo"));
+
+        cdxEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "En Proceso", "Finalizado" }));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cdxEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cdxEstado)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -254,17 +283,20 @@ public class Frm_RegistroVuelo extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnRegresar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(69, 69, 69)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 72, Short.MAX_VALUE))
-                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                        .addGap(75, 75, 75)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -276,7 +308,10 @@ public class Frm_RegistroVuelo extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(66, 66, 66))
@@ -300,7 +335,7 @@ public class Frm_RegistroVuelo extends javax.swing.JFrame {
            JOptionPane.showMessageDialog(this, "Complete todos los campos.");
     
     
-    }else {int i = metodos.guardarvuelo(txtIdVuelo.getText(),cbxIdAvion.getSelectedItem().toString(), cdxTipo.getSelectedItem().toString(), txtSalida.getText(),txtLlegada.getText(),txtOrigen.getText(),txtDestino.getText());
+    }else {int i = metodos.guardarvuelo(txtIdVuelo.getText(),cbxIdAvion.getSelectedItem().toString(), cdxTipo.getSelectedItem().toString(), txtSalida.getText(),txtLlegada.getText(),txtOrigen.getText(),txtDestino.getText(),cdxEstado.getSelectedItem().toString());
        
        if (i > 0){
            JOptionPane.showMessageDialog(this, "Datos Guardados Exitosamente");
@@ -319,7 +354,7 @@ public class Frm_RegistroVuelo extends javax.swing.JFrame {
     
     }else {
         Metodos_sql mod = new Metodos_sql();
-        mod.modificarvuelo(txtIdVuelo.getText(),cbxIdAvion.getSelectedItem().toString(), cdxTipo.getSelectedItem().toString(), txtSalida.getText(),txtLlegada.getText(),txtOrigen.getText(),txtDestino.getText());
+        mod.modificarvuelo(txtIdVuelo.getText(),cbxIdAvion.getSelectedItem().toString(), cdxTipo.getSelectedItem().toString(), txtSalida.getText(),txtLlegada.getText(),txtOrigen.getText(),txtDestino.getText(),  cdxEstado.getSelectedItem().toString());
         }
         
        MostrarVuelos();
@@ -337,6 +372,10 @@ public class Frm_RegistroVuelo extends javax.swing.JFrame {
         txtDestino.setText(tusuario.getValueAt(tablaVuelos.getSelectedRow(), 6)+ "");
         
     }//GEN-LAST:event_tablaVuelosMouseClicked
+
+    private void cbxIdAvionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxIdAvionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxIdAvionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -382,9 +421,10 @@ public class Frm_RegistroVuelo extends javax.swing.JFrame {
         tvuelo.addColumn("Llegada");
         tvuelo.addColumn("Origen");
         tvuelo.addColumn("Destino");
+        tvuelo.addColumn("Estado");
         tablaVuelos.setModel(tvuelo);
         
-        String []datos = new String[7];
+        String []datos = new String[8];
         
         try {
             Statement leer = conec.createStatement();
@@ -398,6 +438,7 @@ public class Frm_RegistroVuelo extends javax.swing.JFrame {
                 datos[4] = resultado.getString(5);
                 datos[5] = resultado.getString(6);
                 datos[6] = resultado.getString(7);
+                datos[7] = resultado.getString(8);
                 
                 tvuelo.addRow(datos);
             }
@@ -412,6 +453,7 @@ public class Frm_RegistroVuelo extends javax.swing.JFrame {
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JComboBox<String> cbxIdAvion;
+    private javax.swing.JComboBox<String> cdxEstado;
     private javax.swing.JComboBox<String> cdxTipo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -424,6 +466,7 @@ public class Frm_RegistroVuelo extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tablaVuelos;
     private javax.swing.JTextField txtDestino;

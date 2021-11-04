@@ -274,7 +274,7 @@ public class Frm_Pasajeros extends javax.swing.JFrame {
     }//GEN-LAST:event_btnModificarActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        Frm_Aviones ventana = new Frm_Aviones();
+        Frm_admin ventana = new Frm_admin();
         ventana.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed

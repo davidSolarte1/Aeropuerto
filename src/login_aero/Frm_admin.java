@@ -209,7 +209,7 @@ public class Frm_admin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btnAvionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvionesActionPerformed
-        Frm_Aviones ventana = new Frm_Aviones();
+        Frm_Pasajeros ventana = new Frm_Pasajeros();
         ventana.setVisible(true);
         this.dispose();
         

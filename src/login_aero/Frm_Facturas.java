@@ -21,6 +21,7 @@ public class Frm_Facturas extends javax.swing.JFrame {
     /** Creates new form Frm_Facturas */
     public Frm_Facturas() {
         initComponents();
+        setLocationRelativeTo(null);
     }
     /*void limpiarCajas(){
     txtCedulaCli.setText(null);

@@ -52,6 +52,11 @@ public class Frm_sistema extends javax.swing.JFrame {
         btnAsignarVuelo.setBorder(null);
         btnAsignarVuelo.setBorderPainted(false);
         btnAsignarVuelo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsignarVuelo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAsignarVueloActionPerformed(evt);
+            }
+        });
 
         btnClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/client.png"))); // NOI18N
         btnClientes.setToolTipText("");
@@ -68,6 +73,11 @@ public class Frm_sistema extends javax.swing.JFrame {
         btnFacturar.setBorder(null);
         btnFacturar.setBorderPainted(false);
         btnFacturar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnFacturar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFacturarActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -139,10 +149,11 @@ public class Frm_sistema extends javax.swing.JFrame {
                                 .addComponent(btnClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(btnFacturar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel3)
+                                .addComponent(jLabel4)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                         .addComponent(jLabel1)))
                 .addGap(22, 22, 22))
@@ -163,6 +174,18 @@ public class Frm_sistema extends javax.swing.JFrame {
         ventana.setVisible(true);
         this.dispose(); 
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnAsignarVueloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAsignarVueloActionPerformed
+        Frm_vuelos ventana = new Frm_vuelos();
+        ventana.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnAsignarVueloActionPerformed
+
+    private void btnFacturarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacturarActionPerformed
+        Frm_Facturas ventana = new Frm_Facturas();
+        ventana.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnFacturarActionPerformed
 
     /**
      * @param args the command line arguments

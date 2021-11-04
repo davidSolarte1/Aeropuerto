@@ -147,12 +147,12 @@ public class Metodos_sql {
         
         return resultado;
     }
-       public int guardarvuelo(String id_vuelo, String id_avion, String tipo_avion, String salida, String llegada, String origen ,String destino){
+       public int guardarvuelo(String id_vuelo, String id_avion, String tipo_avion, String salida, String llegada, String origen ,String destino,String estado){
     
         int resultado = 0;
         Connection conexion = null;
         
-        String sentencia_guardar_vuelo = ("INSERT INTO vuelos (id_vuelo,id_avion,tipo_avion,salida,llegada,origen,destino) VALUES(?, ?, ?,?,?,?,?) ");
+        String sentencia_guardar_vuelo = ("INSERT INTO vuelos (id_vuelo,id_avion,tipo_avion,salida,llegada,origen,destino,estado) VALUES(?, ?, ?,?,?,?,?,?) ");
         
         try {
             conexion = ConexionBD.conectar();
@@ -165,6 +165,7 @@ public class Metodos_sql {
             sentencia_preparada.setString(5, llegada);
             sentencia_preparada.setString(6, origen);
             sentencia_preparada.setString(7, destino);
+            sentencia_preparada.setString(8, estado);
             
             resultado = sentencia_preparada.executeUpdate();
             
@@ -306,12 +307,12 @@ public class Metodos_sql {
         
     }
     
-     public void modificarvuelo(String id_vuelo, String id_avion, String tipo_avion, String salida, String llegada, String origen, String destino){
+     public void modificarvuelo(String id_vuelo, String id_avion, String tipo_avion, String salida, String llegada, String origen, String destino,String estado){
     
       
         Connection conexion = null;
         
-        String sentencia_modificar = ("UPDATE vuelos SET id_vuelo=?,id_avion=?,tipo_avion=?,salida=?,llegada=?,origen=?,destino=? WHERE id_vuelo = '"+id_vuelo+"'");
+        String sentencia_modificar = ("UPDATE vuelos SET id_vuelo=?,id_avion=?,tipo_avion=?,salida=?,llegada=?,origen=?,destino=?,estado=? WHERE id_vuelo = '"+id_vuelo+"'");
         
         try {
             conexion = ConexionBD.conectar();
@@ -324,6 +325,7 @@ public class Metodos_sql {
             sentencia_preparada.setString(5, llegada);
             sentencia_preparada.setString(6, origen);
             sentencia_preparada.setString(7, destino);
+            sentencia_preparada.setString(8, estado);
             
             sentencia_preparada.executeUpdate();
             JOptionPane.showMessageDialog(null, "Los datos se han modificado \ncorrectamente");
@@ -470,7 +472,7 @@ public class Metodos_sql {
         }
 }
 
-   
+    
     /**
      *
      * @return
