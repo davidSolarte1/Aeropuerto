@@ -181,6 +181,33 @@ public class Metodos_sql {
         return resultado;
     }
     
+    public int guardarasignacion(String vuelo, String cliente){
+    
+        int resultado = 0;
+        Connection conexion = null;
+        
+        String sentencia_guardar_vuelo_a = ("INSERT INTO vuelo_asignado (vuelo,cliente) VALUES(?, ?) ");
+        
+        try {
+            conexion = ConexionBD.conectar();
+            sentencia_preparada = conexion.prepareStatement(sentencia_guardar_vuelo_a);
+            
+            sentencia_preparada.setString(1, vuelo);
+            sentencia_preparada.setString(2, cliente);
+            resultado = sentencia_preparada.executeUpdate();
+            
+            sentencia_preparada.close();
+            
+        conexion.close();
+            
+        } catch (Exception e) {
+            
+            System.out.println(e);
+        }
+        
+        return resultado;
+    }
+    
     
     public void modificar(String cedula, String nombres, String apellidos, String correo, String contraseña){
     
@@ -342,6 +369,7 @@ public class Metodos_sql {
         
     }
 
+     
     
     public void borrar(String cedula, String nombres, String apellidos, String correo, String contraseña){
     
@@ -471,7 +499,46 @@ public class Metodos_sql {
             JOptionPane.showMessageDialog(null, e);
         }
 }
-
+public void consultar_vuelo(JComboBox jboxVuelos){
+        Connection conexion = null;
+        String sentencia_buscar_vuelo = ("SELECT id_vuelo FROM vuelos where estado = 'Libre' ORDER BY id_vuelo");
+        
+        try {
+            
+            conexion = ConexionBD.conectar();
+            sentencia_preparada = conexion.prepareStatement(sentencia_buscar_vuelo);
+            ResultSet result =  sentencia_preparada.executeQuery();
+            jboxVuelos.addItem("Seleccione Vuelo");
+            
+            while(result.next()){
+                jboxVuelos.addItem(result.getString("id_vuelo"));
+            }
+            
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+}
+public void consultar_cliente(JComboBox cbxCliente){
+        Connection conexion = null;
+        String sentencia_buscar_cliente = ("SELECT nombre FROM clientes ORDER BY cedula");
+        
+        try {
+            
+            conexion = ConexionBD.conectar();
+            sentencia_preparada = conexion.prepareStatement(sentencia_buscar_cliente);
+            ResultSet result =  sentencia_preparada.executeQuery();
+            cbxCliente.addItem("Seleccione un Cliente");
+            
+            while(result.next()){
+                cbxCliente.addItem(result.getString("nombre"));
+            }
+            
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+}
     
     /**
      *

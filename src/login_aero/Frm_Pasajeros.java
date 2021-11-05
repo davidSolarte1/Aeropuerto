@@ -67,7 +67,7 @@ public class Frm_Pasajeros extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
-        jLabel1.setText("REGISTRO DE AVIONES (PASAJEROS)");
+        jLabel1.setText("REGISTRO DE AVIONES");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos"));
 
