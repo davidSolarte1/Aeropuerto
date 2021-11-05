@@ -461,7 +461,7 @@ public class Metodos_sql {
     
     public void consultar_id(JComboBox cbox_hangares){
         Connection conexion = null;
-        String sentencia_buscar_hangar = ("SELECT idhangar FROM hangares ORDER BY idhangar");
+        String sentencia_buscar_hangar = ("SELECT idhangar FROM hangares WHERE estado = 'Libre' ORDER BY idhangar ");
         
         try {
             
