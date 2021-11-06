@@ -208,6 +208,39 @@ public class Metodos_sql {
         return resultado;
     }
     
+    public int guardarfactura(String no_factura, String nom_cliente,String fecha_fact,String destino, String dia_salida, String dia_regreso, String cantidad, String valor_u, String valor_t){
+    
+        int resultado = 0;
+        Connection conexion = null;
+        
+        String sentencia_guardar_vuelo_a = ("INSERT INTO facturas (no_factura,nom_cliente,fecha_fact,destino,dia_salida,dia_regreso,cantidad,valor_u,valor_t) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?) ");
+        
+        try {
+            conexion = ConexionBD.conectar();
+            sentencia_preparada = conexion.prepareStatement(sentencia_guardar_vuelo_a);
+            
+            sentencia_preparada.setString(1, no_factura);
+            sentencia_preparada.setString(2, nom_cliente);
+            sentencia_preparada.setString(3, fecha_fact);
+            sentencia_preparada.setString(4, destino);
+            sentencia_preparada.setString(5, dia_salida);
+            sentencia_preparada.setString(6, dia_regreso);
+            sentencia_preparada.setString(7, cantidad);
+            sentencia_preparada.setString(8, valor_u);
+            sentencia_preparada.setString(9, valor_t);
+            resultado = sentencia_preparada.executeUpdate();
+            
+            sentencia_preparada.close();
+            
+        conexion.close();
+            
+        } catch (Exception e) {
+            
+            System.out.println(e);
+        }
+        
+        return resultado;
+    }
     
     public void modificar(String cedula, String nombres, String apellidos, String correo, String contraseña){
     
@@ -540,9 +573,9 @@ public void consultar_cliente(JComboBox cbxCliente){
         }
 }
     
-    /**
-     *
-     * @return
-     */
-
+public double result;
+    
+    public void valort(double n1, double n2){
+        result = n1 * n2;
+    }
 }
