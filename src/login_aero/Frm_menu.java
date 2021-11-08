@@ -33,23 +33,30 @@ public class Frm_menu extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btnLogin = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("NSimSun", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(153, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("AEROUPUERTO EL CAMPANERO");
+        jLabel1.setText("AEROPUERTO EL CAMPANERO");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 770, 40));
 
-        btnLogin.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        btnLogin.setBackground(new java.awt.Color(51, 194, 227));
+        btnLogin.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnLogin.setText("LOGIN");
+        btnLogin.setBorder(new javax.swing.border.MatteBorder(null));
         btnLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
             }
         });
+        getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 201, 210, 30));
 
-        btnExit.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        btnExit.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnExit.setText("SALIR DEL SISTEMA");
         btnExit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnExit.addActionListener(new java.awt.event.ActionListener() {
@@ -57,33 +64,11 @@ public class Frm_menu extends javax.swing.JFrame {
                 btnExitActionPerformed(evt);
             }
         });
+        getContentPane().add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 240, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnExit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 313, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jLabel1)
-                .addGap(41, 41, 41)
-                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(72, Short.MAX_VALUE))
-        );
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondologin12.jpg"))); // NOI18N
+        jLabel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 700, 420));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -138,5 +123,6 @@ public class Frm_menu extends javax.swing.JFrame {
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnLogin;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
