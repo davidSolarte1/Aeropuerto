@@ -44,7 +44,7 @@ public class Frm_menu extends javax.swing.JFrame {
         jLabel1.setText("AEROPUERTO EL CAMPANERO");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 770, 40));
 
-        btnLogin.setBackground(new java.awt.Color(51, 194, 227));
+        btnLogin.setBackground(new java.awt.Color(102, 255, 102));
         btnLogin.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnLogin.setText("LOGIN");
         btnLogin.setBorder(new javax.swing.border.MatteBorder(null));
@@ -56,15 +56,17 @@ public class Frm_menu extends javax.swing.JFrame {
         });
         getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 201, 210, 30));
 
+        btnExit.setBackground(new java.awt.Color(102, 255, 102));
         btnExit.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnExit.setText("SALIR DEL SISTEMA");
+        btnExit.setBorder(new javax.swing.border.MatteBorder(null));
         btnExit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExitActionPerformed(evt);
             }
         });
-        getContentPane().add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 240, -1, -1));
+        getContentPane().add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 240, 220, 30));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondologin12.jpg"))); // NOI18N
         jLabel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
